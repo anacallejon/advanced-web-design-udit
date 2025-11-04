@@ -18,13 +18,13 @@ body {
 
 /* Parallax background with fixed attachment */
 .parallax-bg {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23667eea" width="1200" height="600"/><circle cx="200" cy="150" r="80" fill="%23764ba2" opacity="0.3"/><circle cx="800" cy="400" r="120" fill="%23764ba2" opacity="0.2"/><circle cx="1000" cy="200" r="60" fill="%23764ba2" opacity="0.4"/></svg>');
-  min-height: 400px;
+  background-image: url(https://i.blogs.es/b8e7c1/disney-channel/1366_521.jpeg);
+  min-height: 500px;
+  max-width: auto;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: flex;
   align-items: center;
   justify-content: center;
