@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Some Outstanding Websites</title>
+    <!-- Albert Sans + Krona + Petit -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Krona+One&family=Albert+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* VARIABLES DE COLOR POR DEFECTO (sección 1) */
+      :root {
+        --bg-color: #ffffff;
+        --header-bg: #d1d1d1;
+        --text-color: #000000;
+        --separator-color: #000000;
+      }
+
+      /* Tema por secciones: se irá aplicando a <body> */
+      body.theme-1 {
+        --bg-color: #ffffff;
+        --header-bg: #d1d1d1;
+        --text-color: #000000;
+        --separator-color: #000000;
+      }
+
+      body.theme-2 {
+        --bg-color: #f5f5f5; /* gris muy claro */
+        --header-bg: #d0d0d0;
+        --text-color: #000000;
+        --separator-color: #000000;
+      }
+
+      body.theme-3 {
+        --bg-color: #e0e0e0; /* gris claro */
+        --header-bg: #bfbfbf;
+        --text-color: #000000;
+        --separator-color: #000000;
+      }
+
+      body.theme-4 {
+        --bg-color: #b0b0b0; /* gris medio */
+        --header-bg: #444444;
+        --text-color: #ffffff; /* negro → blanco */
+        --separator-color: #ffffff;
+      }
+
+      body.theme-5 {
+        --bg-color: #808080; /* gris más oscuro */
+        --header-bg: #333333;
+        --text-color: #ffffff;
+        --separator-color: #ffffff;
+      }
+
+      body.theme-6 {
+        --bg-color: #404040; /* gris muy oscuro */
+        --header-bg: #222222;
+        --text-color: #ffffff;
+        --separator-color: #ffffff;
+      }
+
+      body.theme-7 {
+        --bg-color: #0a0a0a; /* fondo negro final */
+        --header-bg: #1e1e1e;
+        --text-color: #f8f8f8; /* todo texto blanco */
+        --separator-color: #f8f8f8;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        overflow-x: hidden;
+        cursor: none; /* ocultamos el cursor nativo */
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+
+      .header {
+        background-color: var(--header-bg);
+        padding: 30px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease, background-color 0.5s ease;
+      }
+
+      .header h1 {
+        font-family: "Petit Formal Script", cursive;
+        font-size: 30pt;
+        color: var(--text-color);
+        font-weight: normal;
+        transition: font-size 0.3s ease, color 0.5s ease;
+      }
+
+      /* Header compacto al hacer scroll */
+      .header.compact {
+        padding: 10px 0;
+      }
+
+      .header.compact h1 {
+        font-size: 14pt;
+      }
+
+      .hero {
+        padding: 80px 120px;
+        background-color: var(--bg-color);
+        transition: background-color 0.5s ease;
+      }
+
+      .hero h2,
+      .hero-title {
+        font-family: "Krona One", sans-serif;
+        font-size: 72pt;
+        line-height: 1.1;
+        text-align: left;
+        color: var(--text-color);
+        margin-bottom: 60px;
+        transition: color 0.5s ease;
+      }
+
+      .separator-line {
+        width: 100%;
+        height: 2px;
+        background-color: var(--separator-color);
+        margin-bottom: 40px;
+        transition: background-color 0.5s ease;
+      }
+
+      .nav-tabs {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 30px; /* más pegadas a lo siguiente */
+      }
+
+      .nav-tab {
+        flex: 1;
+        padding: 15px;
+        text-align: center;
+        font-family: "Albert Sans", sans-serif;
+        font-size: 18pt;
+        cursor: pointer;
+        transition: all 0.3s ease, color 0.5s ease, background-color 0.5s ease;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      .nav-tab:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .content-section {
+        padding: 0 120px 100px 120px;
+        scroll-margin-top: 120px;
+        color: var(--text-color);
+        transition: color 0.5s ease;
+      }
+
+      .section-title {
+        font-family: "Krona One", sans-serif;
+        font-size: 36pt;
+        text-align: left;
+        color: var(--text-color);
+        margin-bottom: 40px;
+        transition: color 0.5s ease;
+      }
+
+      .iframe-container {
+        width: 100%;
+        height: 600px;
+        margin-bottom: 60px;
+        background-color: #9a9a9a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+      }
+
+      .iframe-placeholder {
+        font-family: "Krona One", sans-serif;
+        font-size: 48pt;
+        color: var(--text-color);
+        transition: color 0.5s ease;
+      }
+
+      .iframe-content {
+        width: 100%;
+        height: 100%;
+        border: none;
+        overflow: auto;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 60px;
+      }
+
+      .left-column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .analysis-title {
+        font-family: "Krona One", sans-serif;
+        font-size: 18pt;
+        color: var(--text-color);
+        margin-bottom: 12px;
+        transition: color 0.5s ease;
+      }
+
+      .analysis-text,
+      .conclusion-text {
+        font-family: "Albert Sans", sans-serif;
+        font-size: 12pt;
+        line-height: 1.5;
+        color: var(--text-color);
+        text-align: justify;
+        margin: 0;
+        transition: color 0.5s ease;
+      }
+
+      .info-block {
+        margin-bottom: 40px;
+      }
+
+      .info-block:last-child {
+        margin-bottom: 0;
+      }
+
+      .visit-link {
+        font-family: "Albert Sans", sans-serif;
+        font-size: 12pt;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.5s ease;
+      }
+
+      .visit-link:hover {
+        text-decoration: underline;
+      }
+
+      .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .screenshot {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: #c4c4c4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--separator-color);
+        border-radius: 8px;
+        transition: border-color 0.5s ease;
+      }
+
+      .screenshot-label {
+        font-family: "Krona One", sans-serif;
+        font-size: 36pt;
+        color: var(--text-color);
+        transition: color 0.5s ease;
+      }
+
+      .section-divider {
+        width: 100%;
+        height: 2px;
+        background-color: var(--separator-color);
+        margin: 80px 0;
+        transition: background-color 0.5s ease;
+      }
+
+      /* CURSOR PERSONALIZADO */
+      .custom-cursor {
+        width: 30px; /* ya como tú lo pusiste */
+        height: 30px;
+        border-radius: 50%;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 2000;
+        transform: translate(-50%, -50%);
+        mix-blend-mode: difference; /* invierte según fondo */
+        transition: transform 0.15s ease;
+      }
+
+      /* Modo anillo sobre elementos clicables */
+      .cursor-ring {
+        background-color: transparent !important;
+        border: 2px solid white;
+      }
+
+      @media (max-width: 1400px) {
+        .hero h2,
+        .hero-title {
+          font-size: 72pt;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .hero {
+          padding: 60px 80px;
+        }
+
+        .hero h2,
+        .hero-title {
+          font-size: 60pt;
+        }
+
+        .content-section {
+          padding: 0 80px 80px 80px;
+        }
+
+        .section-title {
+          font-size: 32pt;
+        }
+
+        .two-column {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 32pt;
+        }
+
+        .hero {
+          padding: 40px 40px;
+        }
+
+        .hero h2,
+        .hero-title {
+          font-size: 36pt;
+        }
+
+        .nav-tabs {
+          flex-wrap: wrap;
+        }
+
+        .nav-tab {
+          flex: 1 1 calc(33.333% - 20px);
+          min-width: 120px;
+        }
+
+        .content-section {
+          padding: 0 40px 60px 40px;
+        }
+
+        .section-title {
+          font-size: 20pt;
+        }
+
+        .analysis-title {
+          font-size: 16pt;
+        }
+
+        .analysis-text,
+        .conclusion-text {
+          font-size: 12pt;
+        }
+      }
+
+      /* Dos columnas SOLO para la sección final */
+      .final-two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+      }
+
+      /* En móviles → columna única */
+      @media (max-width: 1024px) {
+        .final-two-column {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <!-- Empezamos en theme-1 -->
+  <body class="theme-1">
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor"></div>
+
+    <!-- Header -->
+    <div class="header">
+      <h1>My Web Project</h1>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h2 class="hero-title">
+        Some <br />Outstanding<br />
+        Websites
+      </h2>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="separator-line"></div>
+
+      <div class="nav-tabs">
+        <div class="nav-tab" onclick="scrollToSection(1)">Obys Agency</div>
+        <div class="nav-tab" onclick="scrollToSection(2)">
+          Histography Infographics
+        </div>
+        <div class="nav-tab" onclick="scrollToSection(3)">
+          Brutalist Websites
+        </div>
+        <div class="nav-tab" onclick="scrollToSection(4)">Lara Lussheimer</div>
+        <div class="nav-tab" onclick="scrollToSection(5)">Finger Spelling</div>
+        <div class="nav-tab" onclick="scrollToSection(6)">Inmersive garden</div>
+        <div class="nav-tab" onclick="scrollToSection(7)">
+          Some more websites
+        </div>
+      </div>
+    </div>
+
+    <!-- Website Section 1 -->
+    <div class="content-section" id="section-1">
+      <h3 class="section-title">Obys Agency</h3>
+      <div class="iframe-container">
+        <iframe
+          src="https://obys.agency"
+          title="Obys Agency"
+          class="iframe-content"
+        ></iframe>
+      </div>
+
+      <div class="two-column">
+        <div class="left-column">
+          <div class="info-block">
+            <h4 class="analysis-title">Analysis</h4>
+            <p class="analysis-text">
+              Obys Agency showcases a highly refined art direction rooted in
+              extreme minimalism and expressive use of negative space. The
+              website combines oversized typography, asymmetric layouts and
+              smooth scroll-driven animations. Each section behaves like an
+              individual composition, where subtle motion guides the user
+              through the content. The experience prioritizes visual impact,
+              supported by a restrained color palette and meticulous motion
+              design.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Conclusion</h4>
+            <p class="conclusion-text">
+              The site functions as a live demonstration of the studio’s
+              creative capabilities. Rather than simply describing their work,
+              it embodies it through a polished, cinematic interaction style.
+              This makes Obys Agency a strong reference for contemporary digital
+              aesthetics, where minimalism and dynamic motion coexist
+              seamlessly.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Visit page</h4>
+            <p class="conclusion-text">
+              <a
+                class="visit-link"
+                href="https://obys.agency"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Click here to visit Obys Agency.</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Website Section 2 -->
+    <div class="content-section" id="section-2">
+      <h3 class="section-title">Histography</h3>
+      <div class="iframe-container">
+        <iframe
+          src="https://histography.io/"
+          title="Histography"
+          class="iframe-content"
+        ></iframe>
+      </div>
+
+      <div class="two-column">
+        <div class="left-column">
+          <div class="info-block">
+            <h4 class="analysis-title">Analysis</h4>
+            <p class="analysis-text">
+              Histography is an interactive timeline that visualizes thousands
+              of years of historical events through an infinite horizontal
+              interface. Its futuristic dark aesthetic and glowing accents
+              amplify its sense of depth. The timeline consists of animated
+              nodes that react to the cursor, providing an exploratory
+              experience. Massive datasets are processed visually in real time,
+              allowing users to dive into history in a uniquely fluid way.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Conclusion</h4>
+            <p class="conclusion-text">
+              The project successfully transforms complex historical data into
+              an intuitive and engaging visual narrative. Its strength lies in
+              merging data visualization with interaction design, creating an
+              experience that is both educational and immersive. Histography
+              stands as a benchmark for how digital tools can reframe
+              informational content.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Visit page</h4>
+            <p class="conclusion-text">
+              <a
+                class="visit-link"
+                href="https://histography.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Click here to visit Histography.</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Website Section 3 -->
+    <div class="content-section" id="section-3">
+      <h3 class="section-title">Brutalist Websites</h3>
+      <div class="iframe-container">
+        <iframe
+          src="https://brutalistwebsites.com/"
+          title="Brutalist Websites"
+          class="iframe-content"
+        ></iframe>
+      </div>
+
+      <div class="two-column">
+        <div class="left-column">
+          <div class="info-block">
+            <h4 class="analysis-title">Analysis</h4>
+            <p class="analysis-text">
+              Brutalist Websites serves as a curated archive celebrating the
+              “brutalist” digital aesthetic — one defined by raw interfaces,
+              brutal simplification and deliberate abandonment of conventional
+              UX norms. The site mirrors this philosophy with plain typography,
+              gridless layouts, and a no-frills list-based structure. Its
+              simplicity is intentional: it removes all stylistic embellishment
+              to highlight content itself.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Conclusion</h4>
+            <p class="conclusion-text">
+              Its value lies in documenting a distinct design movement within
+              web culture. Rather than impressing through interactivity, it
+              challenges the expectations of modern web design by embracing
+              anti-design principles. It works as a cultural artifact, offering
+              insight into alternative stylistic approaches.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Visit page</h4>
+            <p class="conclusion-text">
+              <a
+                class="visit-link"
+                href="https://brutalistwebsites.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Click here to visit Brutalist Websites.</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Website Section 4 -->
+    <div class="content-section" id="section-4">
+      <h3 class="section-title">Lara Lussheimer</h3>
+      <div class="iframe-container">
+        <iframe
+          src="https://laralussheimer.com/"
+          title="Lara Lussheimer"
+          class="iframe-content"
+        ></iframe>
+      </div>
+
+      <div class="two-column">
+        <div class="left-column">
+          <div class="info-block">
+            <h4 class="analysis-title">Analysis</h4>
+            <p class="analysis-text">
+              Lara Lussheimer’s portfolio adopts a refined editorial approach,
+              using clean layouts, elegant typography and generous spacing.
+              Visual content takes center stage, with large images creating a
+              calm and immersive rhythm. Transitions are extremely subtle,
+              ensuring that they enhance rather than distract from the work. The
+              result is a quiet yet confident design language.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Conclusion</h4>
+            <p class="conclusion-text">
+              The experience communicates professionalism through restraint.
+              Instead of relying on heavy animation, the site demonstrates that
+              sophistication can come from clarity and thoughtful composition.
+              It serves as a strong example of minimalistic editorial design
+              applied to creative portfolios.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Visit page</h4>
+            <p class="conclusion-text">
+              <a
+                class="visit-link"
+                href="https://laralussheimer.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Click here to visit Lara Lussheimer.</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Website Section 5 -->
+    <div class="content-section" id="section-5">
+      <h3 class="section-title">Finger Spelling</h3>
+      <div class="iframe-container">
+        <iframe
+          src="https://fingerspelling.xyz/"
+          title="Finger Spelling"
+          class="iframe-content"
+        ></iframe>
+      </div>
+
+      <div class="two-column">
+        <div class="left-column">
+          <div class="info-block">
+            <h4 class="analysis-title">Analysis</h4>
+            <p class="analysis-text">
+              Finger Spelling introduces a playful and intuitive method for
+              learning sign language through real-time hand recognition. The
+              website uses the user’s camera combined with computer vision to
+              detect gestures and provide instant feedback. Its bright palette,
+              rounded typography and simple interface make the experience
+              accessible for all audiences. The design balances educational
+              clarity with a sense of interactive fun.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Conclusion</h4>
+            <p class="conclusion-text">
+              The project stands out for its innovative integration of
+              hand-tracking technology within a web environment. It is highly
+              functional, engaging and user-friendly, showing how artificial
+              intelligence can meaningfully enhance digital learning tools. Its
+              simplicity and technical depth make it an impressive example of
+              applied interaction design.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Visit page</h4>
+            <p class="conclusion-text">
+              <a
+                class="visit-link"
+                href="https://fingerspelling.xyz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Click here to visit Finger Spelling.</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Website Section 6 -->
+    <div class="content-section" id="section-6">
+      <h3 class="section-title">Immersive Garden</h3>
+      <div class="iframe-container">
+        <iframe
+          src="https://immersive-g.com/"
+          title="Immersive Garden"
+          class="iframe-content"
+        ></iframe>
+      </div>
+
+      <div class="two-column">
+        <div class="left-column">
+          <div class="info-block">
+            <h4 class="analysis-title">Analysis</h4>
+            <p class="analysis-text">
+              Immersive Garden delivers a deeply atmospheric digital experience
+              built around WebGL scenes, cinematic animation and dramatic
+              lighting. The visual language is futuristic, characterized by dark
+              tones, luminous highlights and condensed typography. Interactions
+              respond sensitively to cursor movement, while transitions between
+              sections feel fluid and high-end. The site demonstrates a mastery
+              of motion and 3D rendering.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Conclusion</h4>
+            <p class="conclusion-text">
+              This website exemplifies the cutting edge of digital storytelling.
+              It merges 3D graphics, motion design and interface choreography
+              into a coherent and immersive narrative. As a studio presentation,
+              it positions Immersive Garden as a leader in visually ambitious
+              and technically advanced web experiences.
+            </p>
+          </div>
+          <div class="info-block">
+            <h4 class="analysis-title">Visit page</h4>
+            <p class="conclusion-text">
+              <a
+                class="visit-link"
+                href="https://immersive-g.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Click here to visit Immersive Garden.</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+          <div class="screenshot">
+            <div class="screenshot-label">screenshot</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN FINAL = SECTION 7 -->
+    <div class="content-section" id="section-7">
+      <h2 class="hero-title">Some more websites</h2>
+
+      <div class="final-two-column">
+        <div class="left-column">
+            <div class="info-block">
+            <h4 class="analysis-title">Scale</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://scale.com/" class="visit-link">here</a>
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">Every Noise</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://everynoise.com/" class="visit-link">here</a>
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">Locomotive</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://locomotive.ca/en" class="visit-link">here</a>
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">Rally</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://rallyinteractive.com/#jaybird" class="visit-link"
+                >here</a
+                >
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">Dog Studio / Dept.</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://dogstudio.co/mx/" class="visit-link">here</a>
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">Resn</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://resn.co.nz/" class="visit-link">here</a>
+            </p>
+            </div>
+        </div>
+
+        <div class="left-column">
+            
+
+            <div class="info-block">
+            <h4 class="analysis-title">The Climate Pledge</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://www.theclimatepledge.com/us/en" class="visit-link"
+                >here</a
+                >
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">Active Theory</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://activetheory.net/" class="visit-link">here</a>
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">Rains</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://www.es.rains.com/?intl=" class="visit-link"
+                >here</a
+                >
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">The Ocean Cleanup</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://theoceancleanup.com/" class="visit-link">here</a>
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">Bruno Simon Portfolio</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://bruno-simon.com/" class="visit-link">here</a>
+            </p>
+            </div>
+
+            <div class="info-block">
+            <h4 class="analysis-title">Paper Planes World</h4>
+            <p class="analysis-text">
+                You can visit this page
+                <a href="https://paperplanes.world/" class="visit-link">here</a>
+            </p>
+            </div>
+        </div>
+        </div>
+
+
+    <script>
+      function scrollToSection(num) {
+        const section = document.getElementById("section-" + num);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector(".header");
+        const cursor = document.querySelector(".custom-cursor");
+        const sections = document.querySelectorAll(".content-section");
+
+        // Compactar header al hacer scroll
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("compact");
+          } else {
+            header.classList.remove("compact");
+          }
+          updateThemeByScroll();
+        });
+
+        // Mover cursor personalizado
+        window.addEventListener("mousemove", (e) => {
+          if (!cursor) return;
+          cursor.style.top = `${e.clientY}px`;
+          cursor.style.left = `${e.clientX}px`;
+        });
+
+        // Cursor en modo anillo sobre elementos clicables
+        document.querySelectorAll("a, button, .nav-tab").forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            cursor.classList.add("cursor-ring");
+          });
+          el.addEventListener("mouseleave", () => {
+            cursor.classList.remove("cursor-ring");
+          });
+        });
+
+        // Bloquear scroll de la página cuando el ratón está dentro del iframe
+        document.querySelectorAll(".iframe-content").forEach((frame) => {
+          frame.addEventListener("mouseenter", () => {
+            document.body.style.overflow = "hidden";
+          });
+
+          frame.addEventListener("mouseleave", () => {
+            document.body.style.overflow = "auto";
+          });
+        });
+
+        const themeMap = {
+          "section-1": "theme-1",
+          "section-2": "theme-2",
+          "section-3": "theme-3",
+          "section-4": "theme-4",
+          "section-5": "theme-5",
+          "section-6": "theme-6",
+          "section-7": "theme-7",
+        };
+
+        function updateThemeByScroll() {
+          const viewportCenter = window.innerHeight / 2;
+          let activeTheme = "theme-1"; // por defecto
+
+          sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
+              const id = section.id;
+              const theme = themeMap[id];
+              if (theme) {
+                activeTheme = theme;
+              }
+            }
+          });
+
+          document.body.classList.remove(
+            "theme-1",
+            "theme-2",
+            "theme-3",
+            "theme-4",
+            "theme-5",
+            "theme-6",
+            "theme-7"
+          );
+          document.body.classList.add(activeTheme);
+        }
+
+        // Llamamos una vez al cargar para que empiece en theme-1 correcto
+        updateThemeByScroll();
+      });
+    </script>
+  </body>
+</html>
