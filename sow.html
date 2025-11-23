@@ -423,6 +423,40 @@
           grid-template-columns: 1fr;
         }
       }
+
+      /* Botón para volver arriba */
+      #scrollTopBtn {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: white;
+        color: black;
+        font-size: 22px;
+        font-family: "Krona One", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1500;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        mix-blend-mode: difference;
+      }
+
+      /* Mostrar botón al hacer scroll */
+      #scrollTopBtn.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Hover → mismo estilo que tu cursor ring */
+      #scrollTopBtn:hover {
+        transform: scale(1.2);
+      }
     </style>
   </head>
 
@@ -1057,13 +1091,14 @@
               line.style.width = fullWidth + "px";
             }, totalDelay);
 
-            totalDelay += 900; // tiempo entre líneas
+            totalDelay += 500; // tiempo entre líneas
           });
         }
 
         // ---------- BARRA + PESTAÑAS EMERGIENDO DESDE ABAJO AL CARGAR ----------
         requestAnimationFrame(() => {
           document.body.classList.add("page-loaded");
+          totalDelay += 900;
         });
 
         // ---------- RESTO DE TU LÓGICA (header, cursor, temas, etc.) ----------
@@ -1145,7 +1180,28 @@
 
         // Iniciar tema correcto al cargar
         updateThemeByScroll();
+
+        // BOTÓN "VOLVER ARRIBA"
+        const scrollBtn = document.getElementById("scrollTopBtn");
+
+        // Mostrar/ocultar botón según scroll
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 400) {
+            scrollBtn.classList.add("visible");
+          } else {
+            scrollBtn.classList.remove("visible");
+          }
+        });
+
+        // Acción al hacer clic
+        scrollBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
       });
     </script>
+    <div class="custom-cursor"></div>
+
+    <!-- Botón scroll-to-top -->
+    <div id="scrollTopBtn">↑</div>
   </body>
 </html>
