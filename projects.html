@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects · My Web Project</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Alexandria:ital,wght@0,200;0,300;1,200&family=Krona+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <h1 class="site-title">My Web Project</h1>
+
+      <nav class="nav">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#design">Design</a>
+        <a href="projects.html" class="nav-current">Projects</a>
+        <a href="index.html#weekly">Weekly progress</a>
+      </nav>
+    </header>
+
+    <!-- HERO PROJECTS -->
+    <section class="hero projects-hero">
+      <h2 class="hero-title">Projects</h2>
+      <p class="hero-sub">
+        A selection of the main pieces I am designing and developing during the
+        Web Atelier course.
+      </p>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- OVERVIEW BOX -->
+    <section class="content-box">
+      <h3 class="box-title">Overview</h3>
+
+      <div class="box-text">
+        <p>
+          These projects explore different aspects of web design: layout,
+          typography, interaction and visual storytelling. Each one is an
+          opportunity to test ideas and learn new tools.
+        </p>
+        <p>
+          Most of them start as simple sketches or wireframes and slowly evolve
+          into more refined design pieces as I iterate on structure, style and
+          accessibility.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS GALLERY BOX -->
+    <section class="content-box">
+      <h3 class="box-title">Project Gallery</h3>
+
+      <div class="box-text">
+        <p>Here is a gallery of the projects I've worked on until now.</p>
+
+        <div class="projects-grid">
+          <!-- PROJECT 1 -->
+          <article class="project-card">
+            <a href="projects/homepage.html" class="project-title-link">
+              <h4 class="project-title">My Web Project · Homepage</h4>
+            </a>
+            <p class="project-meta">
+              Semantic layout · Glassmorphism · Sticky header
+            </p>
+            <p class="project-desc">
+              Landing page focusing on semantic HTML and a consistent
+              glassmorphism UI.
+            </p>
+            <a href="index.html" class="project-frame-link">
+              <div class="project-preview">
+                <img
+                  src="assets/img/Home_screenshot.png"
+                  alt="Preview of homepage"
+                />
+              </div>
+            </a>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="project-card">
+            <a href="sow/sow.html" class="project-title-link">
+              <h4 class="project-title">Some Outstanding Websites</h4>
+            </a>
+            <p class="project-meta">SOW</p>
+            <p class="project-desc">
+              Exploring award-winning web designs for inspiration and best
+              practices.
+            </p>
+            <a href="projects/sow.html" class="project-frame-link">
+              <div class="project-preview">
+                <img src="assets/img/sow_screenshot.png" alt="Preview SOW" />
+              </div>
+            </a>
+          </article>
+
+          <!-- PROJECT 3 -->
+          <article class="project-card">
+            <a href="projects/interactions.html" class="project-title-link">
+              <h4 class="project-title">Interaction Studies</h4>
+            </a>
+            <p class="project-meta">Microinteractions · Hover states</p>
+            <p class="project-desc">
+              A study on movement and transitions while keeping accessibility.
+            </p>
+            <a href="projects/interactions.html" class="project-frame-link">
+              <div class="project-preview">
+                <img
+                  src="assets/img/Home_screenshot.png"
+                  alt="Preview interactions"
+                />
+              </div>
+            </a>
+          </article>
+
+          <!-- PROJECT 4 -->
+          <article class="project-card">
+            <a href="projects/future.html" class="project-title-link">
+              <h4 class="project-title">Future Project Slot</h4>
+            </a>
+            <p class="project-meta">Reserved · To be developed</p>
+            <p class="project-desc">
+              Placeholder for upcoming layouts and prototypes.
+            </p>
+            <a href="projects/future.html" class="project-frame-link">
+              <div class="project-preview">
+                <img
+                  src="assets/img/Home_screenshot.png"
+                  alt="Preview future"
+                />
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      © 2025 Ana Callejón - Web Atelier (UDIT) · Web Design (2025 Fall)
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

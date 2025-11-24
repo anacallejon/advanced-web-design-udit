@@ -4,137 +4,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Design trends</title>
+
+    <!-- Fuente para el título del header -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS específico de esta página -->
     <link rel="stylesheet" href="../assets/css/design-trends.css" />
   </head>
+
   <body>
+    <!-- HEADER NEUTRO: título centrado + solo link a Projects -->
+    <header class="dt-header">
+      <h1 class="dt-site-title">My Web Project</h1>
+      <a href="../projects-page/index.html" class="dt-link-projects">
+        Projects
+      </a>
+    </header>
+
     <div class="title">
       <p><strong>In Memory of Disney Channel</strong></p>
       <h1><em>The childhood of a generation</em></h1>
     </div>
 
+    <!-- resto del contenido igual que lo tenías... -->
+
     <div class="parallax-bg">
-      <div>Not so long ago</div>
+      <div class="parallax-bg-text">Not so long ago...</div>
     </div>
 
     <div class="content">
-      <h2>What Is Parallax Scrolling?</h2>
+      <h2>What Was Disney Channel?</h2>
       <p>
-        Parallax scrolling makes backgrounds move slower than foreground content
-        as you scroll. It's like looking out a car window: trees (background)
-        move slower than the road (foreground). This adds depth and makes sites
-        feel dynamic.
+        Disney Channel was a family-oriented cable network that mixed animated
+        shows, live-action series and original movies for kids and teens. For
+        many millennials and Gen Z viewers it became a shared cultural
+        touchstone—weekend premieres, iconic characters and coming-of-age
+        stories that shaped childhood tastes, launched young stars, and now
+        spark strong nostalgia across both generations.
       </p>
 
-      <h2>Technique 1: CSS Fixed Background</h2>
+      <h2>Historical marks</h2>
       <p>
-        The key CSS property is
-        <code>background-attachment: fixed</code>
-        . This keeps the background image stationary while the content scrolls
-        over it.
+        Disney Channel first launched on April 18, 1983, and quickly grew into a
+        beloved home for kids’ shows and movies. Its true “nostalgia era”
+        exploded in the early 2000s with iconic series like Lizzie McGuire, Kim
+        Possible, Hannah Montana, and later hits like Wizards of Waverly Place.
+        The channel also made history with its unforgettable DCOMs, especially
+        High School Musical in 2006, which became a worldwide craze. Fans still
+        remember the classic wand IDs, the Disney Channel Games, and—here in
+        Spain—the big moment when the channel became free-to-air in 2008. All
+        these milestones turned Disney Channel into a warm childhood memory for
+        millions.
       </p>
-
-      <div class="code-box">
-        <code>
-          .parallax-bg {
-          <br />
-          &nbsp;&nbsp;background-image: url('image.jpg');
-          <br />
-          &nbsp;&nbsp;min-height: 400px;
-          <br />
-          &nbsp;&nbsp;background-attachment: fixed;
-          <br />
-          &nbsp;&nbsp;background-position: center;
-          <br />
-          &nbsp;&nbsp;background-size: cover;
-          <br />
-          }
-        </code>
-      </div>
-
-      <div class="comparison">
-        <h3>Why Use It?</h3>
-        <ul>
-          <li>
-            <strong>Engagement:</strong>
-            Makes sites more engaging (users scroll longer)
-          </li>
-          <li>
-            <strong>Storytelling:</strong>
-            Helps tell a story visually through layers
-          </li>
-          <li>
-            <strong>Depth:</strong>
-            Creates a sense of 3D space on a 2D screen
-          </li>
-        </ul>
-        <h3>⚠️ Cautions:</h3>
-        <ul>
-          <li>Can cause motion sickness in some users</li>
-          <li>May impact performance on older devices</li>
-          <li>Doesn't work well on mobile (iOS Safari doesn't support it)</li>
-          <li>Use sparingly for best effect</li>
-        </ul>
-      </div>
-
-      <div class="reflection">
-        <strong>Atelier Reflection:</strong>
-        Does the parallax effect make this page feel more "alive"? Why or why
-        not? Does it enhance your understanding of the content, or is it purely
-        decorative? Consider the balance between visual interest and
-        accessibility.
-      </div>
     </div>
 
     <div class="normal-bg">
-      <div>Normal Scrolling Background</div>
+      <div>Our last views</div>
     </div>
 
     <div class="content">
-      <h2>Comparison: Normal Scrolling</h2>
       <p>
-        The section above uses
-        <code>background-attachment: scroll</code>
-        (the default). Notice how it scrolls with the content instead of staying
-        fixed. This is the traditional approach.
+        It's possible the last show you remember from Disney Channel is
+        <em>Stuck In The Middle </em> , <em>Bizaardvark</em> or perhaps
+        <em>Bunk'd</em>. These later series started un 2015-2016, which
+        represent the end of a generation viewer profile: the millenial and gen
+        z era.
+      </p>
+      <h2>And the last time we watched</h2>
+      <p>
+        On <strong>January 7, 2025</strong>, Disney Channel Spain aired its
+        final broadcast, marking the end of an era for many viewers who grew up
+        with its shows and movies. The closure reflects broader shifts in media
+        consumption, with audiences increasingly turning to streaming platforms
+        for content. While Disney Channel as a traditional cable network has
+        ceased operations in Spain, its legacy lives on through the beloved
+        programs that continue to be accessible via Disney's streaming services.
       </p>
 
-      <div class="comparison">
-        <h3>Key Differences:</h3>
-        <ul>
-          <li>
-            <strong>Parallax (fixed):</strong>
-            Background stays in place, content moves over it
-          </li>
-          <li>
-            <strong>Normal (scroll):</strong>
-            Background and content move together at the same speed
-          </li>
-        </ul>
-        <p>
-          <strong>Tip:</strong>
-          Scroll up and down this page multiple times to really feel the
-          difference between the purple (parallax) and green (normal) sections!
-        </p>
-      </div>
-
-      <h2>Mobile Considerations</h2>
+      <h2>Why this happened</h2>
       <p>
-        On mobile devices,
-        <code>background-attachment: fixed</code>
-        often doesn't work due to browser limitations. The CSS in this demo
-        automatically switches to regular scrolling on smaller screens to ensure
-        a good experience for all users.
+        As explained earlier, streaming platforms had become the most common
+        media consumption, so traditional TV channels lost relevance. The
+        audience shifted, and the channel couldn't support itself anymore.
+        <br />The Contract expired: Its broadcast partner didn't renew their
+        streaming contract, while Disney focused on its own streaming services.
       </p>
-
-      <div class="reflection">
-        <strong>Critical Design Question:</strong>
-        Is the parallax effect truly enhancing the user experience, or could it
-        be a barrier? Consider users with vestibular disorders who may
-        experience discomfort with motion effects. How might we offer
-        alternatives or respect the
-        <code>prefers-reduced-motion</code>
-        media query?
-      </div>
     </div>
 
     <!-- JavaScript-based Parallax with Multiple Layers -->
@@ -149,166 +111,418 @@
       </div>
     </div>
 
-    <div class="content">
-      <h2>Technique 2: JavaScript Parallax with transform</h2>
-      <p>
-        The section above uses
-        <strong>
-          JavaScript with
-          <code>transform: translateY()</code>
-        </strong>
-        to move elements at different speeds. This offers more control than pure
-        CSS.
+    <!-- GALERÍA DE TARJETAS DE EJEMPLOS -->
+    <section class="trend-cards">
+      <h2 class="cards-heading">Like old friends coming to visit</h2>
+      <p class="cards-intro">
+        Some of the most popular Disney Channel shows and movies that everyone
+        remembers.
       </p>
 
-      <div class="code-box">
-        <code>
-          // Each layer has a data-speed attribute
-          <br />
-          const layer = document.querySelector('.layer-back');
-          <br />
-          const speed = layer.dataset.speed; // 0.2 = very slow
-          <br />
-          <br />
-          window.addEventListener('scroll', () =&gt; {
-          <br />
-          &nbsp;&nbsp;const scrolled = window.pageYOffset;
-          <br />
-          &nbsp;&nbsp;const yPos = -(scrolled * speed);
-          <br />
-          &nbsp;&nbsp;layer.style.transform = `translateY(${yPos}px)`;
-          <br />
-          });
-        </code>
+      <div class="card-grid">
+        <!-- CARD 1 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Good Luck, Charlie!</h3>
+          <p class="trend-text">
+            <span class="card-date">April 4th 2010 – February 16th 2014.</span>
+            Warm family sitcom following the Duncan family as they adapt to baby
+            Charlie and everyday chaos at home.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/good_luck_charlie.jpeg"
+              alt="Good Luck Charlie show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Jessie</h3>
+          <p class="trend-text">
+            <span class="card-date"
+              >September 30th 2011 – October 16th 2015.</span
+            >
+            A Texas girl moves to New York and becomes nanny to four rich kids,
+            juggling chaos, friendship and growing up.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/jessie.webp"
+              alt="Jessie show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Wizards of Waverly Place</h3>
+          <p class="trend-text">
+            <span class="card-date">October 12th 2007 – January 6th 2012.</span>
+            Three siblings train as wizards while trying to survive school,
+            family rules and magical responsibility.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/wizards.jpg"
+              alt="Wizards of Waverly Place show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="trend-card">
+          <h3 class="trend-title">I Didn't Do It</h3>
+          <p class="trend-text">
+            <span class="card-date"
+              >January 17th 2014 – October 16th 2015.</span
+            >
+            Five best friends land in ridiculous situations and then rewind to
+            explain how everything went wrong.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/didnt_do_it.jpg"
+              alt="I Didn't Do It show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 5 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Austin &amp; Ally</h3>
+          <p class="trend-text">
+            <span class="card-date"
+              >December 2nd 2011 – January 10th 2016.</span
+            >
+            A confident performer and a shy songwriter team up to create music,
+            chase fame and protect their friendship.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/austin_ally.jpg"
+              alt="Austin & Ally show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 6 -->
+        <article class="trend-card">
+          <h3 class="trend-title">A.N.T. Farm</h3>
+          <p class="trend-text">
+            <span class="card-date">May 6th 2011 – March 21st 2014.</span>
+            Gifted middle school students join a special program and try to fit
+            in with much older high school teens.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/ant_farm.jpg"
+              alt="A.N.T. Farm show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 7 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Girl Meets World</h3>
+          <p class="trend-text">
+            <span class="card-date">June 27th 2014 – January 20th 2017.</span>
+            Riley Matthews, her friends and family navigate school, crushes and
+            life lessons in New York City.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/girl_meets.jpg"
+              alt="Girl Meets World show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 8 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Suite Life on Deck</h3>
+          <p class="trend-text">
+            <span class="card-date">September 26th 2008 – May 6th 2011.</span>
+            Zack, Cody and their friends attend high school on a cruise ship,
+            mixing travel, trouble and comedy.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/suite_life.jpg"
+              alt="Suite Life on Deck show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 9 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Shake It Up</h3>
+          <p class="trend-text">
+            <span class="card-date"
+              >November 7th 2010 – November 10th 2013.</span
+            >
+            Two best friends become dancers on a local TV show while juggling
+            school, fame and friendship drama.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/shake_it_up.jpg"
+              alt="Shake It Up show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 10 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Phineas and Ferb</h3>
+          <p class="trend-text">
+            <span class="card-date">August 17th 2007 – June 12th 2015.</span>
+            Two inventive stepbrothers build wild projects each day of summer
+            while their sister tries to expose them.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/phineas.jpg"
+              alt="Phineas and Ferb show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 11 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Hannah Montana</h3>
+          <p class="trend-text">
+            <span class="card-date">March 24th 2006 – January 16th 2011.</span>
+            Miley Stewart lives a double life as a normal teenager by day and a
+            secret pop star by night.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/hannah.jpg"
+              alt="Hannah Montana show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 12 -->
+        <article class="trend-card">
+          <h3 class="trend-title">K.C. Undercover</h3>
+          <p class="trend-text">
+            <span class="card-date"
+              >January 18th 2015 – February 2nd 2018.</span
+            >
+            High school math genius K.C. joins her parents’ spy organization
+            while trying to stay a normal teen.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/kc.jpg"
+              alt="K.C. Undercover show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 13 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Gravity Falls</h3>
+          <p class="trend-text">
+            <span class="card-date">June 15th 2012 – February 15th 2016.</span>
+            Twins Dipper and Mabel investigate strange mysteries while spending
+            the summer in Gravity Falls.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/gravity_falls.webp"
+              alt="Gravity Falls show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 14 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Bunk'd</h3>
+          <p class="trend-text">
+            <span class="card-date">July 31st 2015 – present.</span>
+            Kids from New York head to a rustic summer camp, making new friends
+            and surviving chaotic activities.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/bunkd.jpg"
+              alt="Bunk'd show preview"
+            />
+          </a>
+        </article>
+
+        <!-- CARD 15 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Lizzie McGuire</h3>
+          <p class="trend-text">
+            <span class="card-date"
+              >January 12th 2001 – February 14th 2004.</span
+            >
+            Lizzie and her animated alter ego face crushes, school drama and
+            awkward early teen moments.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/lizzie.jpg"
+              alt="Lizzie McGuire show preview"
+            />
+          </a>
+        </article>
+
+        <!-- MOVIE 1 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Teen Beach Movie</h3>
+          <p class="trend-text">
+            <span class="card-date">July 19th 2013.</span>
+            Two surfers are pulled into a 1960s beach musical and must sing,
+            dance and find their way back home.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/teen_beach.jpg"
+              alt="Teen Beach Movie preview"
+            />
+          </a>
+        </article>
+
+        <!-- MOVIE 2 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Starstruck</h3>
+          <p class="trend-text">
+            <span class="card-date">February 15th 2010.</span>
+            A down-to-earth girl unexpectedly meets a teen pop star and
+            challenges his glamorous Hollywood world.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/starstruck.jpg"
+              alt="Starstruck movie preview"
+            />
+          </a>
+        </article>
+
+        <!-- MOVIE 3 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Radio Rebel</h3>
+          <p class="trend-text">
+            <span class="card-date">February 17th 2012.</span>
+            Shy Tara secretly hosts a bold radio show, giving advice and
+            confidence to her classmates at school.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/radio_rebel.jpg"
+              alt="Radio Rebel movie preview"
+            />
+          </a>
+        </article>
+
+        <!-- MOVIE 4 -->
+        <article class="trend-card">
+          <h3 class="trend-title">High School Musical</h3>
+          <p class="trend-text">
+            <span class="card-date">January 20th 2006.</span>
+            Basketball star Troy and shy Gabriella audition for the school
+            musical and change the status quo.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/high_school_1.jpg"
+              alt="High School Musical movie preview"
+            />
+          </a>
+        </article>
+
+        <!-- MOVIE 5 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Freaky Friday</h3>
+          <p class="trend-text">
+            <span class="card-date">August 10th 2003.</span>
+            A mother and daughter swap bodies and are forced to live each
+            other’s lives for a chaotic day.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/freaky_friday.png"
+              alt="Freaky Friday movie preview"
+            />
+          </a>
+        </article>
+
+        <!-- MOVIE 6 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Descendants</h3>
+          <p class="trend-text">
+            <span class="card-date">July 31st 2015.</span>
+            The teenage children of famous Disney villains face a choice between
+            following evil or writing their own story.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/descendants.webp"
+              alt="Descendants movie preview"
+            />
+          </a>
+        </article>
+
+        <!-- MOVIE 7 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Cheetah Girls</h3>
+          <p class="trend-text">
+            <span class="card-date">August 15th 2003.</span>
+            Four best friends form a girl group and learn about loyalty, fame
+            and staying true to themselves.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/cheetah.webp"
+              alt="Cheetah Girls movie preview"
+            />
+          </a>
+        </article>
+
+        <!-- MOVIE 8 -->
+        <article class="trend-card">
+          <h3 class="trend-title">Camp Rock</h3>
+          <p class="trend-text">
+            <span class="card-date">June 20th 2008.</span>
+            Mitchie attends a music camp, finds her voice and unexpectedly
+            connects with a famous teen rock star.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/camp_rock.jpg"
+              alt="Camp Rock movie preview"
+            />
+          </a>
+        </article>
+
+        <!-- MOVIE 9 -->
+        <article class="trend-card">
+          <h3 class="trend-title">16 Wishes</h3>
+          <p class="trend-text">
+            <span class="card-date">June 25th 2010.</span>
+            Abby’s sixteen magical birthday wishes come true, but she soon
+            discovers that perfect isn’t so simple.
+          </p>
+          <a href="#" class="trend-image-link">
+            <img
+              src="../design-trends/assets/16_wishes.jpg"
+              alt="16 Wishes movie preview"
+            />
+          </a>
+        </article>
       </div>
+    </section>
 
-      <div class="comparison">
-        <h3>Advantages of JavaScript Parallax:</h3>
-        <ul>
-          <li>
-            <strong>Precise Control:</strong>
-            You can control exactly how fast each layer moves
-          </li>
-          <li>
-            <strong>Multiple Elements:</strong>
-            Move any HTML element, not just backgrounds
-          </li>
-          <li>
-            <strong>Works on Mobile:</strong>
-            Unlike
-            <code>background-attachment: fixed</code>
-          </li>
-          <li>
-            <strong>Complex Animations:</strong>
-            Combine with opacity, scale, rotation, etc.
-          </li>
-        </ul>
-        <h3>⚠️ Considerations:</h3>
-        <ul>
-          <li>Requires JavaScript (fallback if JS is disabled)</li>
-          <li>
-            Use
-            <code>requestAnimationFrame</code>
-            for better performance
-          </li>
-          <li>
-            Respect
-            <code>prefers-reduced-motion</code>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <footer class="footer">
+      © 2025 Ana Callejón - Web Atelier (UDIT) · Web Design (2025 Fall)
+    </footer>
 
-    <!-- Image-based Parallax Layers -->
-    <div class="parallax-image-section" id="image-parallax">
-      <div class="image-layer image-layer-1" data-speed="0.3"></div>
-      <div class="image-layer image-layer-2" data-speed="0.6"></div>
-      <div class="image-layer image-layer-3" data-speed="0.9"></div>
-      <div class="speed-indicator">
-        3 image layers • Speeds: slow (0.3) → medium (0.6) → fast (0.9)
-      </div>
-    </div>
-
-    <div class="content">
-      <h2>Technique 3: Multi-Layer Images</h2>
-      <p>
-        The section above combines multiple background images moving at
-        different speeds to create a 3D depth effect.
-      </p>
-
-      <div class="comparison">
-        <h3>📊 Comparison of All 3 Techniques:</h3>
-        <table style="width: 100%; border-collapse: collapse; margin-top: 1rem">
-          <tbody>
-            <tr style="background: #f8f9fa; font-weight: bold">
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                Technique
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                Implementation
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                Mobile Support
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                Complexity
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                <strong>CSS Fixed</strong>
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                background-attachment: fixed
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                ❌ Limited
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                ⭐ Very simple
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                <strong>JS Transform</strong>
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                transform: translateY()
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                ✅ Works
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                ⭐⭐ Medium
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                <strong>Multi-layer</strong>
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                Multiple elements + JS
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                ✅ Works
-              </td>
-              <td style="padding: 0.75rem; border: 1px solid #dee2e6">
-                ⭐⭐⭐ Advanced
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="reflection">
-        <strong>Final Reflection:</strong>
-        Which technique do you prefer? CSS is perfect for simple sites.
-        JavaScript offers full control but requires more code. Multi-layer
-        creates the most impressive effects but may impact performance.
-        <strong>The best choice depends on your specific project.</strong>
-      </div>
-    </div>
-
+    <!-- Script de parallax (tuyo original, intacto) -->
     <script>
       // Check for reduced motion preference
       const prefersReducedMotion = window.matchMedia(

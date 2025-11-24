@@ -391,6 +391,42 @@
           grid-template-columns: 1fr;
         }
       }
+
+      /* Contenedor interno del header (para alinear como Disney) */
+      .header-inner {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* Botón Projects */
+      .projects-link {
+        position: absolute;
+        right: 40px;                     /* separación derecha estilo Disney */
+        top: 50%;
+        transform: translateY(-50%);     /* centrar verticalmente */
+        font-family: "Albert Sans", sans-serif;
+        font-size: 16pt;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: opacity 0.3s ease, color 0.3s ease;
+      }
+
+      /* Hover suave */
+      .projects-link:hover {
+        opacity: 0.6;
+      }
+
+      /* Modo compacto: igual que tu título */
+      .header.compact .projects-link {
+        font-size: 10pt;
+        right: 25px;
+      }
+
     </style>
   </head>
 
@@ -401,8 +437,12 @@
 
     <!-- Header -->
     <div class="header">
-      <h1>My Web Project</h1>
+      <div class="header-inner">
+        <h1>My Web Project</h1>
+          <a href="../index.html" class="projects-link">Projects</a>
+      </div>
     </div>
+
 
     <!-- Hero Section -->
     <div class="hero">

@@ -3,65 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web Project - WEB ATELIER (UDIT)</title>
-    <meta
-      name="description"
-      content="A student web project for WEB ATELIER (UDIT) course"
+    <title>My Web Project</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Alexandria:ital,wght@0,200;0,300;1,200&family=Krona+One&display=swap"
+      rel="stylesheet"
     />
+
     <link rel="stylesheet" href="assets/css/index.css" />
   </head>
-  <body>
-    <a href="#main" class="skip-link">Skip to main content</a>
 
-    <header>
-      <div class="container">
-        <h1>My Web Project</h1>
-        <p>Ana Callejón - WEB ATELIER (UDIT)</p>
-      </div>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <h1 class="site-title">My Web Project</h1>
+
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#design">Design</a>
+        <a href="projects-page/index.html">Projects</a>
+        <a href="#weekly">Weekly progress</a>
+      </nav>
     </header>
 
-    <main id="main" class="container">
-      <section>
-        <h2>Welcome to my web</h2>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <h2 class="hero-title">Welcome <br />to my web</h2>
+      <p class="hero-sub">
+        This is the starting point for my web project. I will build this
+        incrementally, commiting progress after each class.
+      </p>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- BOX 1 -->
+    <section id="about" class="content-box">
+      <h3 class="box-title">Project Goals</h3>
+
+      <div class="box-text">
         <p>
-          This is the starting point for my web project. I will build this
-          incrementally, committing progress after each class.
+          This website is part of the Web Atelier course at UDIT. My main goals
+          are:
         </p>
 
-        <h3>Project Goals</h3>
         <ul>
-          <li>Create a responsive, accessible website</li>
+          <li>Create a responsive, accesible website</li>
           <li>Practice semantic HTML</li>
           <li>Implement modern CSS techniques</li>
-          <li>Follow web accessibility guidelines</li>
+          <li>Follow web accesibility guidelines</li>
         </ul>
-      </section>
 
-      <section>
-        <h2>Weekly Progress</h2>
-        <p>
-          Check my
-          <a href="https://github.com/[username]/[project-repo]/commits/main"
-            >commit history</a
-          >
-          to see weekly progress.
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <p>© 2025 [Your Name] — WEB ATELIER (UDIT) · Web Design (2025 Fall).</p>
-        <p>
-          <a href="https://github.com/ruvebal/web-atelier-udit"
-            >Course Framework</a
-          >
-          ·
-          <a href="project-brief.md">Project Brief</a>
-        </p>
+        <a class="check-link" href="#">
+          Check it out <span class="arrow">↗</span>
+        </a>
       </div>
-    </footer>
+    </section>
 
+    <!-- BOX 2 -->
+    <section id="design" class="content-box">
+      <h3 class="box-title">Design and Experiments</h3>
+
+      <div class="box-text">
+        <p>
+          Here I will document layouts, typography tests, color palettes and
+          interaction experiments as the project evolves.
+        </p>
+
+        <a class="check-link" href="#">
+          Check it out <span class="arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- BOX 3 -->
+    <section id="weekly" class="content-box">
+      <h3 class="box-title">Weekly Progress</h3>
+
+      <div class="box-text">
+        <p>Check my commit history in GitHub to see weekly progress.</p>
+
+        <a class="check-link" href="#">
+          Check it out <span class="arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- BOX 4 -->
+    <section id="projects" class="content-box">
+      <h3 class="box-title">Projects</h3>
+
+      <div class="box-text">
+        <p>I will publish my design projects here as I work.</p>
+
+        <a class="check-link" href="#">
+          Check it out <span class="arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT BOX -->
+    <section id="contact" class="content-box">
+      <h3 class="box-title">Contact</h3>
+
+      <div class="box-text">
+        <p>You can use this to contact me, just fill in your info:</p>
+
+        <form class="contact-form">
+          <div class="form-row">
+            <label>Name</label>
+            <input type="text" placeholder="Write your name here" />
+          </div>
+
+          <div class="form-row">
+            <label>E-mail</label>
+            <input type="email" placeholder="Write your@email.com here" />
+          </div>
+
+          <div class="form-row">
+            <label>Info</label>
+            <input type="text" placeholder="Write your message here" />
+          </div>
+
+          <button type="submit" class="send-btn">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      © 2025 Ana Callejón - Web Atelier (UDIT) · Web Design (2025 Fall)
+    </footer>
     <script src="assets/js/main.js"></script>
+  </body>
+</html>
+
   </body>
 </html>
