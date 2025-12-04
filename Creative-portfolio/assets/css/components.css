@@ -1,0 +1,555 @@
+/* =========================================================
+   COMPONENTES GENERALES
+   ========================================================= */
+
+.btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.4rem;
+  display: inline-block;
+}
+
+/* ====== CARRUSEL ESTÁTICO ====== */
+
+/* Contenedor de las dos filas */
+.carousel-double {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* menos espacio entre filas */
+}
+
+/* Cada fila recorta su contenido, sin scroll visible */
+.carousel-row {
+  overflow: hidden;
+}
+
+/* Cinta de tarjetas */
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+}
+
+/* Cada tarjeta del carrusel: marco fijo */
+.carousel-item {
+  flex: 0 0 360px; /* ancho del “marco” (ajusta si quieres más/grande) */
+  height: 230px; /* alto del “marco” */
+  border-radius: 15px;
+  overflow: hidden; /* recorta lo que sobresale de la imagen */
+  position: relative;
+}
+
+/* Imagen dentro: siempre llena el marco, sin deformarse */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* mantiene proporciones y recorta lo que sobra */
+}
+
+/* Desplazamiento fijo, como si el carrusel se hubiera parado a media pasada */
+
+/* Fila superior: un poco hacia la izquierda */
+.carousel-row--top .carousel-track {
+  transform: translateX(-180px); /* prueba -150, -220 según lo veas */
+}
+
+/* Fila inferior: un poco hacia la derecha */
+.carousel-row--bottom .carousel-track {
+  transform: translateX(-20px); /* prueba 100, 180, etc. */
+}
+
+/* ===== OCULTAR CURSOR ORIGINAL ===== */
+html,
+body,
+* {
+  cursor: none !important;
+}
+
+html {
+  cursor: none !important;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ===== CURSOR PERSONALIZADO ===== */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #b2c1ed; /* color base */
+  background-color: #b2c1ed; /* color base */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  opacity: 0;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+/* Estado sobre links (lo que ya tenías) */
+.custom-cursor.is-link {
+  background-color: transparent !important;
+}
+
+/* ==============================
+   CONTACT SECTION (LEFT-ALIGNED)
+   ============================== */
+
+.contact-section {
+  padding: 4rem 0;
+  background-color: #ffffff;
+  text-align: left; /* alineación izquierda */
+  max-width: 700px; /* opcional, para que no quede muy ancho */
+  margin-left: 90px; /* lo colocamos alineado a la izquierda del layout */
+}
+
+.contact-title {
+  text-align: left;
+}
+
+.contact-text {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 420px; /* alineado a la izquierda */
+}
+
+.contact-label {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+  margin-top: 0.8rem;
+  margin-bottom: 0rem;
+}
+
+.contact-input {
+  padding: 0.8rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+  transition: 0.2s ease;
+  margin-top: none;
+}
+
+.contact-input::placeholder {
+  color: #444;
+  font-family: "Unbounded", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: #cc1753;
+  box-shadow: 0 0 0 3px rgba(204, 23, 83, 0.2);
+}
+
+.contact-btn {
+  padding: 0.9rem 1.5rem;
+  background-color: #cc1753;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: fit-content; /* botón alineado a la izquierda */
+  font-family: "Unbounded", sans-serif;
+}
+
+.contact-btn:hover {
+  background-color: #a41342;
+}
+
+/* ==============================
+   CONTACT SECTION + GLASS BOX
+   ============================== */
+
+.contact-section {
+  padding: 4rem 0;
+  background: transparent; /* dejamos que se vea el fondo general */
+}
+
+/* Caja glass a ancho del viewport (menos márgenes laterales) */
+.contact-box {
+  width: calc(100vw - 160px); /* viewport menos 40px a cada lado */
+  margin: 0 auto; /* centrada respecto al viewport */
+  padding: 3rem 3rem;
+  border-radius: 24px;
+
+  /* GLASSMORPHISM */
+  background: #cbd1ea;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+
+  box-sizing: border-box;
+}
+
+/* Contenido dentro: alineado a la izquierda y con ancho cómodo */
+.contact-title {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.contact-text {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+  max-width: auto;
+  margin-bottom: 1.4rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 420px;
+}
+
+/* Label más separado del texto anterior y muy pegado al input */
+.contact-label {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+  margin-top: 0.9rem;
+  margin-bottom: 0.05rem; /* casi pegado al input */
+}
+
+.contact-input {
+  padding: 0.8rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+  transition: 0.2s ease;
+}
+
+.contact-input::placeholder {
+  color: #444;
+  font-family: "Unbounded", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: #cc1753;
+  box-shadow: 0 0 0 3px rgba(204, 23, 83, 0.2);
+}
+
+.contact-btn {
+  padding: 0.9rem 1.5rem;
+  background-color: #cc1753;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: fit-content;
+  margin-top: 0.4rem;
+}
+
+.contact-btn:hover {
+  background-color: #a41342;
+}
+
+/* ==============================
+   TWO-COLUMN OFFSET CARDS – UPDATED
+   ============================== */
+
+.cards-section {
+  padding: 6rem 0;
+  background-color: white;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  width: calc(100vw - 160px); /* tu ajuste */
+  margin: 0 auto;
+}
+
+/* CARDS */
+.card {
+  position: relative;
+  padding: 0;
+  height: 400px; /* <-- más alta como pedías */
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  border: 12px solid #b2c1ed; /* borde grueso */
+  box-sizing: border-box;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* coloca el texto abajo */
+}
+
+.projects-page .card {
+  position: relative;
+  border-radius: 20px;
+
+  /* GLASSMORPHISM */
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* 👈 ahora en la parte inferior */
+  width: 100%;
+  height: 80px; /* zona de degradado (ajústalo: 40, 60, 100...) */
+  background: linear-gradient(
+    to top,
+    /* 👈 blanco abajo → transparente arriba */ rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 2; /* detrás del texto, encima de la imagen */
+  pointer-events: none;
+}
+
+.card-content {
+  position: relative;
+  z-index: 3;
+  padding: 1.5rem;
+  color: #222;
+}
+
+/* Alineaciones */
+.left-column .card-title,
+.left-column .card-text {
+  text-align: left;
+}
+
+.right-column .card-title,
+.right-column .card-text {
+  text-align: right;
+}
+
+/* TIPOGRAFÍAS */
+.card-title {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 600;
+  color: #cc1753;
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.card-text {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  color: #222;
+  line-height: 1.5;
+  font-size: 0.8rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    width: calc(100vw - 60px);
+  }
+
+  .left-column,
+  .right-column {
+    transform: translateY(0);
+  }
+
+  .right-column .card-title,
+  .right-column .card-text {
+    text-align: left;
+  }
+}
+
+/* ============================================
+   AJUSTE DE ESPACIADO EN TARJETAS
+   ============================================ */
+
+/* Quitamos padding interno para bajar el contenido */
+.projects-page .card {
+  padding-bottom: 0;
+}
+
+/* Contenido más pegado a la parte inferior */
+.projects-page .card-content {
+  padding: 0.8rem 1.2rem 1rem; /* top - sides - bottom */
+}
+
+.projects-page .card-title {
+  margin-bottom: 0.05rem; /* casi sin espacio debajo del título */
+}
+
+.projects-page .card-text {
+  margin-top: 0; /* elimina espacio extra arriba */
+  line-height: 1.3; /* opcional: texto más compacto */
+}
+
+/* ============================================
+   MODAL DE PROYECTO — RELACIÓN 805:400
+   ============================================ */
+
+/* Fondo oscuro detrás (overlay) */
+.project-modal-backdrop {
+  position: fixed; /* 👈 aquí estaba el error antes */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end; /* modal pegado hacia abajo */
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transition: opacity 0.35s ease;
+}
+
+.project-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Ventana modal (relleno sólido + glass) */
+.project-modal {
+  aspect-ratio: 805 / 400; /* proporción fija */
+  width: min(95vw, 1600px); /* lo más grande posible */
+  height: auto;
+  max-height: calc(100vh - 180px); /* deja margen arriba/abajo */
+
+  margin-bottom: 60px; /* margen extra desde abajo */
+
+  background: rgba(178, 193, 237, 0.95); /* azul sólido */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 24px;
+  padding: 2.2rem 2.4rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25);
+
+  /* animación pequeño → grande */
+  transform: translateY(40px) scale(0.85);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+.project-modal-backdrop.is-open .project-modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* --- Interior: dos columnas (texto izq, imágenes dcha) --- */
+.project-modal-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+  height: 100%;
+}
+
+/* Columna izquierda: título y texto */
+.project-modal-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* usamos las mismas clases clonadas desde la card */
+.project-modal-text .card-title {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2vw, 2.4rem);
+  color: #ffffff;
+  margin: 0 0 0.4rem 0;
+  text-align: left;
+}
+
+.project-modal-text .card-text {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+  color: #222;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Columna derecha: varias imágenes */
+.project-modal-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto; /* scroll si hay muchas */
+  padding-right: 0.5rem;
+}
+
+/* Cada imagen mantiene la relación 805:400 */
+.project-modal-images img {
+  width: 100%;
+  aspect-ratio: 805 / 400;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #ddd;
+}
+
+/* Evitar scroll del fondo */
+body.projects-page.modal-open {
+  overflow: hidden;
+}
+
+/* NAVBAR oscurecida mientras el modal está abierto */
+body.projects-page.modal-open .navbar {
+  background-color: rgba(178, 193, 237, 0.75) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .project-modal {
+    width: 100vw;
+    max-height: calc(100vh - 80px);
+    border-radius: 20px 20px 0 0;
+    aspect-ratio: unset; /* en móvil dejamos libre */
+  }
+
+  .project-modal-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+}

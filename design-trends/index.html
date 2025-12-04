@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
 
+    <!-- Fuente Alexandria -->
     <link
       href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500&display=swap"
       rel="stylesheet"
@@ -21,9 +22,12 @@
   </head>
 
   <body>
-    <!-- HEADER NEUTRO: título centrado + solo link a Projects -->
+    <!-- HEADER NEUTRO: título + link a Projects -->
     <header class="dt-header">
-      <h1 class="dt-site-title">My Web Project</h1>
+      <a href="../index.html" class="dt-home-link">
+        <h1 class="dt-site-title">My Web Project</h1>
+      </a>
+
       <a href="../projects-page/index.html" class="dt-link-projects">
         Projects
       </a>
@@ -34,8 +38,7 @@
       <h1><em>The childhood of a generation</em></h1>
     </div>
 
-    <!-- resto del contenido igual que lo tenías... -->
-
+    <!-- BANNER 1 -  FIJO -->
     <div class="parallax-bg">
       <div class="parallax-bg-text">Not so long ago...</div>
     </div>
@@ -66,6 +69,7 @@
       </p>
     </div>
 
+    <!-- BANNER 2 -PARALLAX CSS -->
     <div class="normal-bg">
       <div>Our last views</div>
     </div>
@@ -73,10 +77,10 @@
     <div class="content">
       <p>
         It's possible the last show you remember from Disney Channel is
-        <em>Stuck In The Middle </em> , <em>Bizaardvark</em> or perhaps
-        <em>Bunk'd</em>. These later series started un 2015-2016, which
-        represent the end of a generation viewer profile: the millenial and gen
-        z era.
+        <em>Stuck In The Middle</em>, <em>Bizaardvark</em> or perhaps
+        <em>Bunk'd</em>. These later series started in 2015–2016, which
+        represent the end of a generation viewer profile: the millennial and Gen
+        Z era.
       </p>
       <h2>And the last time we watched</h2>
       <p>
@@ -94,20 +98,23 @@
         As explained earlier, streaming platforms had become the most common
         media consumption, so traditional TV channels lost relevance. The
         audience shifted, and the channel couldn't support itself anymore.
-        <br />The Contract expired: Its broadcast partner didn't renew their
-        streaming contract, while Disney focused on its own streaming services.
+        <br />The contract expired: its broadcast partner didn't renew their
+        distribution agreement, while Disney focused on its own streaming
+        services.
       </p>
     </div>
 
-    <!-- JavaScript-based Parallax with Multiple Layers -->
+    <!-- BANNER 3 - PARALLAX JS CON IMÁGENES + TEXTO -->
     <div class="parallax-js-section" id="js-parallax">
-      <div class="parallax-layer layer-back" data-speed="0.2">🌌</div>
-      <div class="parallax-layer layer-middle" data-speed="0.5">☁️</div>
+      <!-- Capa de fondo -->
+      <div class="parallax-layer layer-back" data-speed="0.2"></div>
+
+      <!-- Capa intermedia (PNG con transparencia) -->
+      <div class="parallax-layer layer-middle" data-speed="0.5"></div>
+
+      <!-- Capa frontal (texto) -->
       <div class="parallax-layer layer-front" data-speed="0.8">
-        JavaScript Parallax
-      </div>
-      <div class="speed-indicator">
-        Scroll to see 3 layers moving at different speeds
+        <span class="parallax-message">They will never be forgotten</span>
       </div>
     </div>
 
@@ -125,8 +132,8 @@
           <h3 class="trend-title">Good Luck, Charlie!</h3>
           <p class="trend-text">
             <span class="card-date">April 4th 2010 – February 16th 2014.</span>
-            Warm family sitcom following the Duncan family as they adapt to baby
-            Charlie and everyday chaos at home.
+            A cosy family sitcom about the everyday chaos of raising kids and
+            growing up together.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -143,8 +150,8 @@
             <span class="card-date"
               >September 30th 2011 – October 16th 2015.</span
             >
-            A Texas girl moves to New York and becomes nanny to four rich kids,
-            juggling chaos, friendship and growing up.
+            A Texas girl becomes a nanny in New York and finds a chaotic but
+            loving second family.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -159,13 +166,13 @@
           <h3 class="trend-title">Wizards of Waverly Place</h3>
           <p class="trend-text">
             <span class="card-date">October 12th 2007 – January 6th 2012.</span>
-            Three siblings train as wizards while trying to survive school,
-            family rules and magical responsibility.
+            Three siblings juggling magic lessons, family drama and normal
+            teenage life in New York.
           </p>
           <a href="#" class="trend-image-link">
             <img
               src="../design-trends/assets/wizards.jpg"
-              alt="Wizards of Waverly Place show preview"
+              alt="Wizards of Waverly Place preview"
             />
           </a>
         </article>
@@ -177,8 +184,8 @@
             <span class="card-date"
               >January 17th 2014 – October 16th 2015.</span
             >
-            Five best friends land in ridiculous situations and then rewind to
-            explain how everything went wrong.
+            Five best friends retelling their wildest mistakes, one disaster at
+            a time.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -195,8 +202,8 @@
             <span class="card-date"
               >December 2nd 2011 – January 10th 2016.</span
             >
-            A confident performer and a shy songwriter team up to create music,
-            chase fame and protect their friendship.
+            A confident performer and a shy songwriter team up to chase their
+            music dreams.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -211,8 +218,8 @@
           <h3 class="trend-title">A.N.T. Farm</h3>
           <p class="trend-text">
             <span class="card-date">May 6th 2011 – March 21st 2014.</span>
-            Gifted middle school students join a special program and try to fit
-            in with much older high school teens.
+            Gifted kids starting high school early and trying to fit in
+            somewhere they stand out.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -227,8 +234,8 @@
           <h3 class="trend-title">Girl Meets World</h3>
           <p class="trend-text">
             <span class="card-date">June 27th 2014 – January 20th 2017.</span>
-            Riley Matthews, her friends and family navigate school, crushes and
-            life lessons in New York City.
+            Riley Matthews growing up, with her parents Cory and Topanga guiding
+            her through life.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -243,8 +250,8 @@
           <h3 class="trend-title">Suite Life on Deck</h3>
           <p class="trend-text">
             <span class="card-date">September 26th 2008 – May 6th 2011.</span>
-            Zack, Cody and their friends attend high school on a cruise ship,
-            mixing travel, trouble and comedy.
+            Zack and Cody take their chaos to a cruise ship turned floating
+            boarding school.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -261,8 +268,7 @@
             <span class="card-date"
               >November 7th 2010 – November 10th 2013.</span
             >
-            Two best friends become dancers on a local TV show while juggling
-            school, fame and friendship drama.
+            Two best friends land their dream job as dancers on a local TV show.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -277,8 +283,8 @@
           <h3 class="trend-title">Phineas and Ferb</h3>
           <p class="trend-text">
             <span class="card-date">August 17th 2007 – June 12th 2015.</span>
-            Two inventive stepbrothers build wild projects each day of summer
-            while their sister tries to expose them.
+            Two stepbrothers turning every summer day into an over-the-top
+            invention.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -293,8 +299,7 @@
           <h3 class="trend-title">Hannah Montana</h3>
           <p class="trend-text">
             <span class="card-date">March 24th 2006 – January 16th 2011.</span>
-            Miley Stewart lives a double life as a normal teenager by day and a
-            secret pop star by night.
+            A teenager living a double life as a regular girl and a pop star.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -311,8 +316,8 @@
             <span class="card-date"
               >January 18th 2015 – February 2nd 2018.</span
             >
-            High school math genius K.C. joins her parents’ spy organization
-            while trying to stay a normal teen.
+            A high school math genius discovers her parents are spies—and joins
+            the family business.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -327,8 +332,8 @@
           <h3 class="trend-title">Gravity Falls</h3>
           <p class="trend-text">
             <span class="card-date">June 15th 2012 – February 15th 2016.</span>
-            Twins Dipper and Mabel investigate strange mysteries while spending
-            the summer in Gravity Falls.
+            Twins Dipper and Mabel uncover the weirdest mysteries in a strange
+            little town.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -343,8 +348,7 @@
           <h3 class="trend-title">Bunk'd</h3>
           <p class="trend-text">
             <span class="card-date">July 31st 2015 – present.</span>
-            Kids from New York head to a rustic summer camp, making new friends
-            and surviving chaotic activities.
+            Camp adventures, new friends and a lot of chaos by the lake.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -361,8 +365,8 @@
             <span class="card-date"
               >January 12th 2001 – February 14th 2004.</span
             >
-            Lizzie and her animated alter ego face crushes, school drama and
-            awkward early teen moments.
+            An early-2000s teen just trying to survive school, crushes and
+            embarrassing moments.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -377,8 +381,8 @@
           <h3 class="trend-title">Teen Beach Movie</h3>
           <p class="trend-text">
             <span class="card-date">July 19th 2013.</span>
-            Two surfers are pulled into a 1960s beach musical and must sing,
-            dance and find their way back home.
+            Two surfers get pulled into a 1960s beach musical and literally land
+            inside the movie.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -393,8 +397,8 @@
           <h3 class="trend-title">Starstruck</h3>
           <p class="trend-text">
             <span class="card-date">February 15th 2010.</span>
-            A down-to-earth girl unexpectedly meets a teen pop star and
-            challenges his glamorous Hollywood world.
+            A down-to-earth girl accidentally collides with a worldwide pop
+            sensation.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -409,8 +413,8 @@
           <h3 class="trend-title">Radio Rebel</h3>
           <p class="trend-text">
             <span class="card-date">February 17th 2012.</span>
-            Shy Tara secretly hosts a bold radio show, giving advice and
-            confidence to her classmates at school.
+            A shy student secretly becomes the boldest radio voice at her
+            school.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -425,8 +429,8 @@
           <h3 class="trend-title">High School Musical</h3>
           <p class="trend-text">
             <span class="card-date">January 20th 2006.</span>
-            Basketball star Troy and shy Gabriella audition for the school
-            musical and change the status quo.
+            Two students from different worlds audition for the school musical
+            and change everything.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -441,8 +445,8 @@
           <h3 class="trend-title">Freaky Friday</h3>
           <p class="trend-text">
             <span class="card-date">August 10th 2003.</span>
-            A mother and daughter swap bodies and are forced to live each
-            other’s lives for a chaotic day.
+            A mother and daughter swap bodies and finally see life from the
+            other side.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -457,8 +461,8 @@
           <h3 class="trend-title">Descendants</h3>
           <p class="trend-text">
             <span class="card-date">July 31st 2015.</span>
-            The teenage children of famous Disney villains face a choice between
-            following evil or writing their own story.
+            The teenage children of classic Disney villains are given a chance
+            to be good.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -473,8 +477,8 @@
           <h3 class="trend-title">Cheetah Girls</h3>
           <p class="trend-text">
             <span class="card-date">August 15th 2003.</span>
-            Four best friends form a girl group and learn about loyalty, fame
-            and staying true to themselves.
+            Four best friends chasing their dream of becoming a superstar girl
+            group.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -489,8 +493,8 @@
           <h3 class="trend-title">Camp Rock</h3>
           <p class="trend-text">
             <span class="card-date">June 20th 2008.</span>
-            Mitchie attends a music camp, finds her voice and unexpectedly
-            connects with a famous teen rock star.
+            A shy girl finds her voice at a summer music camp full of talent and
+            drama.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -505,8 +509,8 @@
           <h3 class="trend-title">16 Wishes</h3>
           <p class="trend-text">
             <span class="card-date">June 25th 2010.</span>
-            Abby’s sixteen magical birthday wishes come true, but she soon
-            discovers that perfect isn’t so simple.
+            A birthday wish list that magically comes true—and quickly gets out
+            of control.
           </p>
           <a href="#" class="trend-image-link">
             <img
@@ -519,23 +523,23 @@
     </section>
 
     <footer class="footer">
-      © 2025 Ana Callejón - Web Atelier (UDIT) · Web Design (2025 Fall)
+      Design Trends · Web Atelier (UDIT) · In memory of Disney Channel
     </footer>
 
-    <!-- Script de parallax (tuyo original, intacto) -->
+    <!-- Script de parallax -->
     <script>
-      // Check for reduced motion preference
+      // Checks for reduced motion preference
       const prefersReducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
       );
       let isReducedMotion = prefersReducedMotion.matches;
 
-      // Handle CSS-based parallax
+      // Handle CSS-based parallax (para .normal-bg)
       function handleMotionPreference() {
-        const parallaxElements = document.querySelectorAll(".parallax-bg");
+        const parallaxElements = document.querySelectorAll(".normal-bg");
 
         if (isReducedMotion) {
-          // User prefers reduced motion - disable parallax
+          // User prefers reduced motion - disable parallax CSS
           parallaxElements.forEach((el) => {
             el.style.backgroundAttachment = "scroll";
           });
@@ -565,13 +569,11 @@
 
             // Only animate when section is in viewport
             if (rect.top < window.innerHeight && rect.bottom > 0) {
-              // Calculate scroll position relative to section's position
               const sectionTop = section.offsetTop;
               const scrolled = window.pageYOffset;
               const offset = scrolled - sectionTop;
-              const yPos = offset * speed * 0.5; // Multiply by 0.5 to reduce movement
+              const yPos = offset * speed * 0.5;
 
-              // Use transform for better performance
               layer.style.transform = `translateY(${yPos}px)`;
             }
           });
@@ -586,7 +588,6 @@
           }
         }
 
-        // Throttle scroll events using requestAnimationFrame
         window.addEventListener("scroll", requestTick, { passive: true });
 
         // Initial update
@@ -603,7 +604,6 @@
         handleMotionPreference();
 
         if (isReducedMotion) {
-          // Reset all transforms
           document
             .querySelectorAll(".parallax-layer, .image-layer")
             .forEach((layer) => {
@@ -614,16 +614,7 @@
         }
       });
 
-      // Log performance info for learning
       console.log("🎬 Parallax Demo Loaded");
-      console.log(
-        "📊 Layers detected:",
-        document.querySelectorAll(".parallax-layer, .image-layer").length
-      );
-      console.log(
-        "♿ Reduced motion:",
-        isReducedMotion ? "ENABLED" : "DISABLED"
-      );
     </script>
   </body>
 </html>

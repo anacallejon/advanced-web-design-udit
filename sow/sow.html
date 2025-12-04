@@ -49,7 +49,7 @@
       body.theme-4 {
         --bg-color: #b0b0b0; /* gris medio */
         --header-bg: #444444;
-        --text-color: #ffffff; /* negro → blanco */
+        --text-color: #ffffff; /* negro a blanco */
         --separator-color: #ffffff;
       }
 
@@ -77,18 +77,29 @@
       body {
         background-color: var(--bg-color);
         overflow-x: hidden;
-        cursor: none; /* ocultamos el cursor nativo */
+        cursor: none; /* oculta el cursor nativo */
         transition: background-color 0.5s ease, color 0.5s ease;
       }
 
       .header {
         background-color: var(--header-bg);
         padding: 30px 0;
-        text-align: center;
         position: sticky;
         top: 0;
         z-index: 1000;
         transition: all 0.3s ease, background-color 0.5s ease;
+      }
+
+      /* Contenedor interno del header */
+      .header-inner {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;   /* centra el h1 */
+        position: relative;        /* referencia para el botón */
       }
 
       .header h1 {
@@ -97,6 +108,7 @@
         color: var(--text-color);
         font-weight: normal;
         transition: font-size 0.3s ease, color 0.5s ease;
+        margin: 0;
       }
 
       /* Header compacto al hacer scroll */
@@ -106,6 +118,28 @@
 
       .header.compact h1 {
         font-size: 14pt;
+      }
+
+      /* Botón Projects alineado a la derecha */
+      .projects-link {
+        position: absolute;
+        right: 40px;                     /* separación derecha */
+        top: 50%;
+        transform: translateY(-50%);     /* centrado vertical */
+        font-family: "Albert Sans", sans-serif;
+        font-size: 12pt;
+        text-decoration: none;
+        color: var(--text-color);
+        transition: opacity 0.3s ease, color 0.3s ease;
+      }
+
+      .projects-link:hover {
+        opacity: 0.6;
+      }
+
+      .header.compact .projects-link {
+        font-size: 10pt;
+        right: 25px;
       }
 
       .hero {
@@ -287,7 +321,7 @@
 
       /* CURSOR PERSONALIZADO */
       .custom-cursor {
-        width: 30px; /* ya como tú lo pusiste */
+        width: 30px;
         height: 30px;
         border-radius: 50%;
         background-color: white;
@@ -297,11 +331,10 @@
         pointer-events: none;
         z-index: 2000;
         transform: translate(-50%, -50%);
-        mix-blend-mode: difference; /* invierte según fondo */
+        mix-blend-mode: difference;
         transition: transform 0.15s ease;
       }
 
-      /* Modo anillo sobre elementos clicables */
       .cursor-ring {
         background-color: transparent !important;
         border: 2px solid white;
@@ -378,59 +411,33 @@
         }
       }
 
-      /* Dos columnas SOLO para la sección final */
+      /* Dos columnas SOLO para la sección final!! */
       .final-two-column {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 60px;
       }
 
-      /* En móviles → columna única */
       @media (max-width: 1024px) {
         .final-two-column {
           grid-template-columns: 1fr;
         }
       }
 
-      /* Contenedor interno del header (para alinear como Disney) */
-      .header-inner {
-        width: 100%;
-        max-width: 1600px;
-        margin: 0 auto;
-        padding: 0 40px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      /* Botón Projects */
-      .projects-link {
-        position: absolute;
-        right: 40px;                     /* separación derecha estilo Disney */
-        top: 50%;
-        transform: translateY(-50%);     /* centrar verticalmente */
-        font-family: "Albert Sans", sans-serif;
-        font-size: 16pt;
+      /* Hacer que el título del header sea clicable sin cambiar estilo */
+      .home-link {
         text-decoration: none;
-        color: var(--text-color);
-        transition: opacity 0.3s ease, color 0.3s ease;
+        color: inherit;
+        display: inline-block;
       }
 
-      /* Hover suave */
-      .projects-link:hover {
-        opacity: 0.6;
-      }
-
-      /* Modo compacto: igual que tu título */
-      .header.compact .projects-link {
-        font-size: 10pt;
-        right: 25px;
+      .home-link h1 {
+        pointer-events: none; /* para que el cursor-ring detecte el enlace, no el texto */
       }
 
     </style>
   </head>
 
-  <!-- Empezamos en theme-1 -->
   <body class="theme-1">
     <!-- Cursor personalizado -->
     <div class="custom-cursor"></div>
@@ -438,11 +445,12 @@
     <!-- Header -->
     <div class="header">
       <div class="header-inner">
-        <h1>My Web Project</h1>
-          <a href="../index.html" class="projects-link">Projects</a>
+        <a href="../index.html" class="home-link">
+          <h1>My Web Project</h1>
+        </a>
+        <a href="../projects-page/index.html" class="projects-link">Projects</a>
       </div>
     </div>
-
 
     <!-- Hero Section -->
     <div class="hero">
@@ -451,11 +459,7 @@
         Websites
       </h2>
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <br /><br /><br /><br /><br />
       <div class="separator-line"></div>
 
       <div class="nav-tabs">
@@ -854,114 +858,113 @@
 
       <div class="final-two-column">
         <div class="left-column">
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Scale</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://scale.com/" class="visit-link">here</a>
+              You can visit this page
+              <a href="https://scale.com/" class="visit-link">here</a>
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Every Noise</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://everynoise.com/" class="visit-link">here</a>
+              You can visit this page
+              <a href="https://everynoise.com/" class="visit-link">here</a>
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Locomotive</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://locomotive.ca/en" class="visit-link">here</a>
+              You can visit this page
+              <a href="https://locomotive.ca/en" class="visit-link">here</a>
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Rally</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://rallyinteractive.com/#jaybird" class="visit-link"
+              You can visit this page
+              <a href="https://rallyinteractive.com/#jaybird" class="visit-link"
                 >here</a
-                >
+              >
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Dog Studio / Dept.</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://dogstudio.co/mx/" class="visit-link">here</a>
+              You can visit this page
+              <a href="https://dogstudio.co/mx/" class="visit-link">here</a>
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Resn</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://resn.co.nz/" class="visit-link">here</a>
+              You can visit this page
+              <a href="https://resn.co.nz/" class="visit-link">here</a>
             </p>
-            </div>
+          </div>
         </div>
 
         <div class="left-column">
-            
-
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">The Climate Pledge</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://www.theclimatepledge.com/us/en" class="visit-link"
+              You can visit this page
+              <a
+                href="https://www.theclimatepledge.com/us/en"
+                class="visit-link"
                 >here</a
-                >
+              >
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Active Theory</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://activetheory.net/" class="visit-link">here</a>
+              You can visit this page
+              <a href="https://activetheory.net/" class="visit-link">here</a>
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Rains</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://www.es.rains.com/?intl=" class="visit-link"
+              You can visit this page
+              <a href="https://www.es.rains.com/?intl=" class="visit-link"
                 >here</a
-                >
+              >
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">The Ocean Cleanup</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://theoceancleanup.com/" class="visit-link">here</a>
+              You can visit this page
+              <a href="https://theoceancleanup.com/" class="visit-link">here</a>
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Bruno Simon Portfolio</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://bruno-simon.com/" class="visit-link">here</a>
+              You can visit this page
+              <a href="https://bruno-simon.com/" class="visit-link">here</a>
             </p>
-            </div>
+          </div>
 
-            <div class="info-block">
+          <div class="info-block">
             <h4 class="analysis-title">Paper Planes World</h4>
             <p class="analysis-text">
-                You can visit this page
-                <a href="https://paperplanes.world/" class="visit-link">here</a>
+              You can visit this page
+              <a href="https://paperplanes.world/" class="visit-link">here</a>
             </p>
-            </div>
+          </div>
         </div>
-        </div>
-
+      </div>
 
     <script>
       function scrollToSection(num) {
@@ -1026,7 +1029,7 @@
 
         function updateThemeByScroll() {
           const viewportCenter = window.innerHeight / 2;
-          let activeTheme = "theme-1"; // por defecto
+          let activeTheme = "theme-1";
 
           sections.forEach((section) => {
             const rect = section.getBoundingClientRect();
@@ -1051,7 +1054,6 @@
           document.body.classList.add(activeTheme);
         }
 
-        // Llamamos una vez al cargar para que empiece en theme-1 correcto
         updateThemeByScroll();
       });
     </script>

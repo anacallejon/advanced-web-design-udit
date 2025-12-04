@@ -24,6 +24,14 @@ body {
   text-align: center;
 }
 
+.dt-home-link {
+  text-decoration: none;
+}
+
+.dt-home-link:hover {
+  opacity: 0.85;
+}
+
 .p {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -40,32 +48,30 @@ body {
   color: #181c47;
 }
 
-/* Parallax background with fixed attachment */
+/* BANNER 1 - FONDO FIJO (SIN PARALLAX) */
 .parallax-bg {
   background-image: url(https://i.blogs.es/b8e7c1/disney-channel/1366_521.jpeg);
-  background-color: #809cd1; /* fondo debajo de la imagen */
+  background-color: #809cd1;
   min-height: 550px;
   max-width: auto;
-  background-attachment: fixed;
-  background-position: left;
+  background-attachment: scroll; /* FIJO NORMAL */
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+
   display: flex;
   align-items: center;
   justify-content: right;
+
   color: white;
   font-size: 2rem;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: right;
-  background-position-y: 210px;
+  background-position: 10% 0px; /* X Y */
 }
 
 .parallax-bg-text {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   display: flex;
   align-items: center;
   justify-content: right;
@@ -77,7 +83,7 @@ body {
   margin-right: 230px;
 }
 
-/* Regular scrolling content (foreground) */
+/* CONTENIDO NORMAL */
 .content {
   background: #cde8ff;
   padding: 3rem 2rem;
@@ -98,6 +104,26 @@ body {
   color: #333;
   font-family: "Alexandria", sans-serif;
   font-size: 14px;
+}
+
+/* BANNER 2 - PARALLAX CSS */
+.normal-bg {
+  background-image: url("../../design-trends/assets/disney1.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 630px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 40px;
+  font-weight: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .comparison {
@@ -134,34 +160,15 @@ body {
   color: #92400e;
 }
 
-/* Non-parallax comparison section */
-.normal-bg {
-  background-image: url("../../design-trends/assets/disney1.png");
-  background-attachment: scroll;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  min-height: 630px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  font-size: 40px;
-  font-weight: normal;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* JavaScript-based Parallax Section */
+/* BANNER 3 - PARALLAX JS */
 .parallax-js-section {
   position: relative;
   height: 600px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(to bottom, #2d4585, #667eea, #181c47);
 }
 
+/* capas JS */
 .parallax-layer {
   position: absolute;
   width: 100%;
@@ -172,194 +179,47 @@ body {
   will-change: transform;
 }
 
+/* CAPA DE FONDO: imagen 1 */
 .layer-back {
-  font-size: 8rem;
-  opacity: 0.2;
-  color: #667eea;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.layer-middle {
-  font-size: 4rem;
-  opacity: 0.5;
-  color: #f59e0b;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.layer-front {
-  font-size: 2rem;
-  color: white;
-  font-weight: bold;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Image layers for parallax */
-.parallax-image-section {
-  position: relative;
-  height: 500px;
-  overflow: hidden;
-  background: #1a202c;
-}
-
-.image-layer {
-  position: absolute;
-  width: 100%;
-  height: 120%;
-  background-size: cover;
+  background-image: url("../../design-trends/assets/logos_disney.png");
+  background-size: contain;
   background-position: center;
-  will-change: transform;
+  background-repeat: no-repeat;
+  opacity: 0.9;
 }
 
-.image-layer-1 {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a202c" width="1200" height="800"/><circle cx="200" cy="600" r="150" fill="%23667eea" opacity="0.1"/><circle cx="1000" cy="200" r="200" fill="%23764ba2" opacity="0.1"/></svg>');
-  z-index: 1;
-}
-
-.image-layer-2 {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><circle cx="600" cy="400" r="100" fill="%23f59e0b" opacity="0.3"/><circle cx="300" cy="200" r="80" fill="%2310b981" opacity="0.3"/><circle cx="900" cy="600" r="120" fill="%23ef4444" opacity="0.3"/></svg>');
+/* CAPA INTERMEDIA: imagen con transparencias */
+.layer-middle {
+  background-image: url("../../design-trends/assets/actors1.webp");
+  background-size: contain;
+  background-position: center 15%;
+  background-repeat: no-repeat;
+  opacity: 0.6;
   z-index: 2;
+  pointer-events: none;
 }
 
-.image-layer-3 {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><text x="600" y="400" text-anchor="middle" font-size="80" fill="white" opacity="0.8" font-family="Arial">⛰️ Mountains</text></svg>');
+/* CAPA FRONTAL: TEXTO */
+.layer-front {
   z-index: 3;
-}
-
-.speed-indicator {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  z-index: 10;
-  font-size: 0.9rem;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@media (max-width: 768px) {
-  .parallax-bg,
-  .normal-bg {
-    background-attachment: scroll;
-    min-height: 300px;
-    font-size: 1.5rem;
-  }
-
-  .content {
-    padding: 2rem 1rem;
-  }
-
-  .parallax-js-section,
-  .parallax-image-section {
-    height: 400px;
-  }
-
-  .layer-back {
-    font-size: 4rem;
-  }
-  .layer-middle {
-    font-size: 2rem;
-  }
-  .layer-front {
-    font-size: 1.5rem;
-  }
-}
-
-/* --- HEADER NEUTRO PARA DESIGN TRENDS --- */
-/* --- HEADER NEUTRO PARA DESIGN TRENDS --- */
-.dt-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  background: #181c47; /* color neutro */
-  padding: 14px 40px;
-
   display: flex;
   align-items: center;
-  justify-content: left;
-
-  border-bottom: 1px solid #cccccc;
-  position: sticky;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
 }
 
-.dt-site-title {
-  font-family: "Petit Formal Script", cursive;
-  font-size: 1.6rem;
-  color: #809cd1;
-  text-align: left;
-}
-
-/* Enlace único a Projects, alineado a la derecha */
-.dt-link-projects {
-  position: absolute;
-  right: 40px;
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
-  font-size: 0.9rem;
-  text-decoration: none;
-  color: #809cd1;
-  font-weight: 500;
-
-  padding: 4px 10px;
-  border-radius: 4px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.dt-link-projects:hover {
-  background: #0c1042;
-}
-
-.content,
-.comparison,
-.reflection,
-.normal-bg,
-.parallax-js-section,
-.parallax-image-section {
+/* Estilo del mensaje */
+.parallax-message {
   font-family: "Alexandria", sans-serif;
+  font-size: clamp(20px, 2vw + 14px, 34px);
+  font-weight: 500;
+  color: #f5f7ff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
 }
 
-/* --- GALERÍA DE TARJETAS PARALLAX --- */
-
-/* --- GALERÍA DE TARJETAS PARALLAX --- */
-
-.trend-cards {
-  max-width: 1100px;
-  margin: 0 auto 4rem;
-  padding: 3rem 2rem 4rem;
-}
-
-.cards-heading {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
-  font-size: 28px;
-  color: #2d4585;
-  text-align: left;
-}
-
-.cards-intro {
-  margin-top: 0.75rem;
-  font-size: 14px;
-  color: #333;
-}
-
-/* GRID: 2 por fila en desktop */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 2 columnas */
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-/* Tarjeta con efecto glass */
-/* --- GALERÍA DE TARJETAS PARALLAX --- */
-
+/* SECCIÓN DE TARJETAS */
 .trend-cards {
   max-width: 1100px;
   margin: 0 auto 4rem;
@@ -383,12 +243,12 @@ body {
 /* GRID: 4 por fila en desktop */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columnas */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
-/* Tarjeta con efecto glass */
+/* Tarjeta glassmorphism */
 .trend-card {
   position: relative;
   padding: 1.75rem 1.5rem 1.75rem;
@@ -403,20 +263,30 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
-/* Hover MUY suave */
+/* Hover muy suave */
 .trend-card:hover {
-  transform: translateY(-3px); /* movimiento mínimo */
+  transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.22);
 }
 
-/* TÍTULO → Arial/Helvetica */
+/* TÍTULO - Arial/Helvetica + efecto suave */
 .trend-title {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  color: #1f2a4d;
+  font-style: italic;
+  color: #2d4585;
+  letter-spacing: 0px;
+  transition: font-size 0.35s ease, letter-spacing 0.35s ease, color 0.35s ease,
+    transform 0.35s ease;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.trend-card:hover .trend-title {
+  color: #2d4585;
+  font-weight: bolder;
+  line-height: normal;
 }
 
 /* TEXTO → Alexandria */
@@ -430,11 +300,11 @@ body {
 /* Estilo especial para FECHAS dentro del texto */
 .card-date {
   font-family: "Alexandria", sans-serif;
-  font-weight: 500; /* un poco más gruesa */
-  color: #809cd1; /* color pedido */
+  font-weight: 500;
+  color: #809cd1;
 }
 
-/* Imagen enlazada (sin forzar proporción) */
+/* Imagen enlazada */
 .trend-image-link {
   display: block;
   margin-top: 0.25rem;
@@ -447,7 +317,69 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Responsive: 3 columnas en tablet grande, 2 en tablet, 1 en móvil */
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 14px;
+  margin: 80px 0 30px;
+  color: #2d4585;
+}
+
+/* --- HEADER NEUTRO --- */
+.dt-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: #181c47;
+  padding: 14px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  border-bottom: 1px solid #cccccc;
+}
+
+.dt-site-title {
+  font-family: "Petit Formal Script", cursive;
+  font-size: 1.6rem;
+  color: #809cd1;
+  text-align: left;
+}
+
+/* Enlace a Projects, alineado a la derecha */
+.dt-link-projects {
+  position: absolute;
+  right: 40px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #809cd1;
+  font-weight: 500;
+
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dt-link-projects:hover {
+  background: #0c1042;
+}
+
+/* Aplicar Alexandria a varias secciones generales */
+.content,
+.comparison,
+.reflection,
+.normal-bg,
+.parallax-js-section,
+.parallax-image-section {
+  font-family: "Alexandria", sans-serif;
+}
+
+/* RESPONSIVE */
 @media (max-width: 1200px) {
   .card-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -460,37 +392,25 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .parallax-bg,
+  .normal-bg {
+    background-attachment: scroll; /* desactiva parallax en móvil */
+    min-height: 300px;
+    font-size: 1.5rem;
+  }
+
+  .content {
+    padding: 2rem 1rem;
+  }
+
+  .parallax-js-section {
+    height: 400px;
+  }
+}
+
 @media (max-width: 600px) {
   .card-grid {
     grid-template-columns: 1fr;
   }
-}
-
-.footer {
-  text-align: center;
-  font-size: 14px;
-  margin: 80px 0 30px;
-  color: #2d4585;
-}
-
-/* --- FLUID TYPOGRAPHY STYLE FOR TREND TITLES --- */
-
-/* Estado normal del título */
-.trend-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-style: italic;
-  color: #2d4585;
-  letter-spacing: 0px;
-  transition: font-size 0.35s ease, letter-spacing 0.35s ease, color 0.35s ease,
-    transform 0.35s ease;
-  font-weight: 400;
-  line-height: normal;
-}
-
-/* Hover aplicado cuando la TARJETA se activa */
-.trend-card:hover .trend-title {
-  color: #2d4585; /* tono del footer */
-  font-weight: bolder;
-  line-height: normal;
 }
